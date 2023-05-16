@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class TodoInformationPopup extends StatefulWidget {
   final TextEditingController descriptionController;
   final TextEditingController titleController;
+  String? type = 'add';
 
-  const TodoInformationPopup(
+  TodoInformationPopup(
       {Key? key,
       required this.titleController,
-      required this.descriptionController})
+      required this.descriptionController,
+      this.type})
       : super(key: key);
 
   @override
@@ -27,9 +29,9 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              "ADD TODO",
-              style: TextStyle(
+            Text(
+              widget.type == "edit" ? "Edit todo" : 'Add todo',
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 35),
@@ -73,7 +75,7 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
               style: ElevatedButton.styleFrom(
                   primary: Colors.red,
                   textStyle: const TextStyle(fontWeight: FontWeight.bold)),
-              child: const Text("ADD"),
+              child: Text(widget.type == "edit" ? "Edit" : 'Add'),
               onPressed: () => Navigator.pop(context, false),
             ),
             const SizedBox(

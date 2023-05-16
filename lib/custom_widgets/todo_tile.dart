@@ -58,9 +58,9 @@ class _TodoTileState extends State<TodoTile> {
                             context: context,
                             builder: (context) {
                               return TodoInformationPopup(
-                                titleController: titleController,
-                                descriptionController: descriptionController,
-                              );
+                                  titleController: titleController,
+                                  descriptionController: descriptionController,
+                                  type: 'edit');
                             }).then((value) {
                           widget.editTask(TodoItem(
                               id: widget.todo.id,
