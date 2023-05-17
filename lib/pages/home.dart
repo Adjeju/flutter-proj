@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.deepPurpleAccent,
         elevation: 0.0,
-        title: const Text("MY TODOS"),
+        title: const Text("My tasks"),
       ),
       body: Column(
         children: [

@@ -30,7 +30,7 @@ class _TodoInformationPopupState extends State<TodoInformationPopup> {
               height: 10,
             ),
             Text(
-              widget.type == "edit" ? "Edit todo" : 'Add todo',
+              widget.type == "edit" ? "Edit task" : 'Add task',
               style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
